@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: subfolder test
+  description: subfolder test
+  contact:
+    name: Peter Ferak
+  version: 1.1.0
+
+paths:
+
+  /admin/operation:
+    get:
+      description: admin
+      operationId: admin
+      responses:
+        "200":
+          description: success
+        '400':
+          $ref: '#/components/responses/400'
+        '5XX':
+          $ref: '#/components/responses/500'
+  /test/operation:
+    get:
+      description: test
+      operationId: test
+      responses:
+        "200":
+          description: success
+        '400':
+          $ref: '#/components/responses/400'
+        '5XX':
+          $ref: '#/components/responses/500'
+
+components:
+
+  responses:
+    400:
+      description: Bad request
+    500:
+      description: An internal server error occurred
